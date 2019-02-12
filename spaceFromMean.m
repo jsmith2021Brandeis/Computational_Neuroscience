@@ -1,5 +1,11 @@
 %Jacob Smith 2.4.2019 NBIO 140b, for use in testing differnet currents
 function vector = spaceFromMean(mean,numSpaces)
+%if plotting only one number, just return the mean
+if numSpaces==1
+    vector=mean;
+    return;
+end
+
 %Generates a vector of n+1 elemtns that is evenly spaced around the mean
 % returns that vector
 %start at 0

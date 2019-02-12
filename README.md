@@ -1,30 +1,30 @@
-Zumo Automation Project
+Computational Neuroscience Library
 =======================
 * The goal of this project is to
-    1. Allow two ZUMO32U4 robots to play a mini sumo match https://www.youtube.com/watch?v=iL8IRF4wQmU
-    2. Have the robots know who won  
-    3. Enable the robots to wirelessly communicate match data to a master laptop  
-    4. Allow the robots to charge themselves wirelessly  
-    5. Allow the robots to reset for a new match automatically  
-    6. Create a machine learning exercise whereby the robots can learn the best strategy by playing eachother  
+    1.  Model the voltage of Neurons using the Forward Euler Method
+    2.  Allow for as much code reuse as possible by using function handles to model different differential equations with the same forward Euler function
 
-* Getting started
- + [Link to install all software](https://brandeismakerlab.dozuki.com/Guide/Getting+Started+with+Zumo+Automation+Project/27?lang=en)
- 
-* Background information
-	+ [Rules of mini sumo](http://robogames.net/rules/all-sumo.php)
-* Robot used	
-	+ [current robot used, ZUMO32U4](https://www.pololu.com/docs/0J63/all)
-	+ [3d printed robot model which we want to switch to](https://www.thingiverse.com/thing:2662828)
-* Software Used
-	+ [Arduino Integrated Development Enviornment](https://www.arduino.cc/en/Main/Software) used to download programs to the robot
-	+ [ZUMO32U4 robot library](http://pololu.github.io/zumo-32u4-arduino-library/) used to interface with the robot)
-	
-* This project was conceived of by technical advisor Tim Hebert and is currently being implemented by Jacob Smith
-* We are always looking for anyone who wants to contribute, email us!  
-    + jsmith2021@brandeis.edu  
-    + [The Brandeis University Makerlab](http://brandeismakerlab.com/people/) 
+* The Forward Euler Method
+  * takes a function handle, a voltage drop function handle, and other necessary parameters to plot the solution to the differential equation
+  * The below image was made using this function, using the Leaky Integrate and Fire Model and a second function handle to create artificial spikes
+  * ![](C:\Users\jsmit\Dropbox\Spring Semester 2018\NBIO 136B\Matlab Workspace\library\Documentation\ForwardEulerExample.PNG)
 
--The Brandeis University Robotics Club  
-<img src="https://a.pololu-files.com/picture/0J6721.1200.jpg?f23bb5e39014c5721350a43b8c0e8fe4" width="200" height="200">
-![Brandeis University Logo](https://www.brandeis.edu/communications/creative/downloads/gotham-outlined.jpg)
+* The EulerManyPlots Method, which uses the Forward Euler method to generate an argument number of plots, with titles for every 
+
+    * ![](C:\Users\jsmit\Dropbox\Spring Semester 2018\NBIO 136B\Matlab Workspace\library\Documentation\ManyEulerExample.PNG)
+    * This function also makes it easy to plot the firing rate over the selected interval
+    * ![](C:\Users\jsmit\Dropbox\Spring Semester 2018\NBIO 136B\Matlab Workspace\library\Documentation\ManyEulerExampleFiringRates.PNG)
+
+* The PlotXY newFig function, which just shortens the number of lines it takes to create and label a figure
+
+* The SpaceFromMean function, which generates an array spaced around the mean with n elements
+
+    * so this would return a vector of (0,.5,1,1.5,2)
+
+        ```
+        spaceFromMean(1,5)
+        ```
+
+    * This function is useful in the EulerMany Plots function
+
+* -Jacob Smith jsmith2021@brandeis.edu

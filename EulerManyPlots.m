@@ -1,7 +1,7 @@
 %Jacob SMith 2.3.2019 jsmith2021@brandeis.edu NBIO 140b
 %for Tutorial 2.1, creates many plots of solutions to differential
 %equations to compare parameters
-function firingRates=EulerManyPlots(voltage,drop,usingSecond,finalTime,dt,El,appliedCurrents,appliedCurrentNames,numIterations,graphTitle,xTitle,yTitle)
+function firingRates=EulerManyPlots(functions,finalTime,dt,El,appliedCurrents,numIterations,graphTitle,xTitle,yTitle)
 %create array to store firingRates, stored in spikes per second
 arrLength=length(appliedCurrents);
 firingRates=zeros(1,arrLength);
@@ -18,7 +18,7 @@ for plotNum =1:numIterations
     %run a forward Euler procedure to find the solution to that
     %differential equation
     appliedCurrent=appliedCurrents(plotNum);
-    spikeCount=forwardEuler(voltage,drop,usingSecond,appliedCurrent,finalTime,dt,El,appliedCurrentNames(plotNum)+" F Current",xTitle,yTitle);
+    spikeCount=forwardEuler(functions,appliedCurrent,finalTime,dt,El,appliedCurrents(plotNum)+" F Current",xTitle,yTitle);
     %convert spikeCount to rate of spikes and add to array
     firingRates(plotNum)=spikeCount/finalTime;
 end
