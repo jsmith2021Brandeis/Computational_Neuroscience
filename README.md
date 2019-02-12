@@ -7,13 +7,13 @@ Computational Neuroscience Library
 * The Forward Euler Method
   * takes a function handle, a voltage drop function handle, and other necessary parameters to plot the solution to the differential equation
   * The below image was made using this function, using the Leaky Integrate and Fire Model and a second function handle to create artificial spikes
-  * ![Voltage Plot](Documentation\ForwardEulerExample.PNG)
+  * ![Voltage Plot](Documentation/ForwardEulerExample.PNG)
 
 * The EulerManyPlots Method, which uses the Forward Euler method to generate an argument number of plots, with titles for every 
 
-    * ![Many Voltage Plots](Documentation\ManyEulerExample.PNG)
+    * ![Many Voltage Plots](Documentation/ManyEulerExample.PNG)
     * This function also makes it easy to plot the firing rate over the selected interval
-    * ![Firing Rate Plot](Documentation\ManyEulerExampleFiringRates.PNG)
+    * ![Firing Rate Plot](Documentation/ManyEulerExampleFiringRates.PNG)
 
 * The PlotXY newFig function, which just shortens the number of lines it takes to create and label a figure
 
