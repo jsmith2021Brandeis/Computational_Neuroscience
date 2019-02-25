@@ -4,6 +4,11 @@ Computational Neuroscience Library
     1.  Model the voltage of Neurons using the Forward Euler Method
     2.  Allow for as much code reuse as possible by using function handles to model different differential equations with the same forward Euler function
 
+* Quick Start
+
+    * In the [Matlab Startup File](https://www.mathworks.com/help/matlab/ref/startup.html), paste this code to include the sample libraries
+    * `addpath('C:\Users\jsmit\Dropbox\Spring Semester 2018\NBIO 136B\Matlab Workspace\Library');`
+
 * The Forward Euler Method
   * takes a function handle, a voltage drop function handle, and other necessary parameters to plot the solution to the differential equation
   * The below image was made using this function, using the Leaky Integrate and Fire Model and a second function handle to create artificial spikes
